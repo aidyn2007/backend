@@ -25,6 +25,13 @@ app.get("/", (req, res) => {
   res.json({ message: "Backend is working" });
 });
 
+app.get("/version", (req, res) => {
+  res.json({
+    version: "1.1",
+    updatedAt: "2026-01-28"
+  });
+});
+
 app.get("/api/items", async (req, res) => {
   const items = await Item.find();
   res.json(items);
